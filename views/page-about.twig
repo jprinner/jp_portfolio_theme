@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<div class="container" class="about-article-content">
+			 <div class="row">
+				<section class="col-md-10" class="about-article-body">
+
+					{# Add profile-image #}
+					<img  class="profile-image"  src="{{TimberImage(post.get_field('profile_image')).src}}" />
+
+					{# Text Content #}
+				  <h2 class="about-me-title"> About Me </h2>
+				  <span class="about-me-content">{{ post.content }}</span>
+				</section>
+
+				{# Add skills profile to right of Content #}
+				<section class="skills-profile col-xs-12 col-sm-12 col-md-2 col-lg-2">
+				  <h3 class="skills-title">Skills Profile</h3>
+						<ul class="skills-list">
+							{% for skill in post.get_field('skills_profile') %}
+								<li class="skills">{{skill.skill}}</li>
+							{% endfor %}
+						</ul>
+				</section>
+			 </div> <!--end row -->
+		</div> <!-- end container  -->
+	</article>
+
+{% endblock %}

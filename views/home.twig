@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <section class="col-md-9 blog-content-wrapper" id="content" role="main">
+      {% for post in posts %}
+
+        <article id="post-{{post.id}}" class="{{post.class}}">
+          <header>
+            <h1 class="post-title"><a href="{{post.link}}">{{post.title}}</a></h1>
+          </header>
+          <section class="entry-content">
+            {{ post.content }}
+          </section>
+        </article>
+      {% endfor %}
+      </section>
+      <aside class="col-md-3" id="primary-sidebar" class="sidebar" role="complementary">
+
+        {{sidebar}}
+
+      </aside>
+    </div><!--end row -->
+  </div> <!--end container -->
+
+{% endblock %}

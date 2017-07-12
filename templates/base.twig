@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html {{ site.language_attributes }}>
+<head>
+  <meta charset="{{ site.charset }}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{ wp_head }}
+
+</head>
+<body class="{{ body_class }}">
+    <div class="body container">
+      <div class="nav-relocate">
+      </div>
+      <header class="header">
+
+        {# Logo for Header at Small Screen #}
+
+        <img class='logo-1' src="{{logo['logo']}}"/>
+
+        {# Normal Header at Big Screen #}
+
+        <h1 class="site-title" > {{ site.name }}  </h1>
+        {% include 'nav.twig' %}
+      </header><!-- /.header -->
+
+        {% block content %}{% endblock %}
+
+    </div><!-- /.container -->
+
+	{# Conditional to Display Contact me button on every page except contact #}
+
+	{% if not is_contact_page %}
+	<div class="contact-me">
+		<h2 id="get-in-touch">  Get in Touch!  </h2>
+		<div>
+			<a href="{{primary_menu.items[3].get_link}}" class="btn btn-contact-me">
+				 Contact Me
+				<span class="fa fa-chevron-right" aria-hidden="true">
+				</span>
+			</a>
+		</div>
+	</div> <!-- /.contact-me -->
+	{% endif %}
+
+
+  {# Footer & social media info #}
+  <footer id="social-media">
+    <div class="content-wrap">
+
+      {# Logo #}
+
+      <img class='logo-2' src="{{logo['logo']}}"/>
+
+      {# Social media and contact links. Add or remove any networks #}
+      <div class="social-media-menu">
+		    {% for item in footer_menu.get_items %}
+          <a href="{{item.get_link}}" target="_blank"><i class="{{item.title}}" aria-hidden="true"></i>
+		    {% endfor %}
+      </div>
+
+      {{ wp_footer }}
+
+          <p>Copyright 2017 by Jessica Prinner</p>
+	  </div> <!-- end content wrap-->
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+{% extends "base.twig" %}
+
+{% block content %}
+
+{# Portfolio Accordion #}
+<main class="main-accordion-content">
+  <div class="container" class="accordion-container">
+    <ul class="portfolio-accordion">
+
+      {% for portfolio in portfolio_items %}
+        <li class="accordion-item">
+          <h3 class="item-title">{{portfolio.post_title}}</h3>
+
+          {# Click on image to expand description #}
+          <div class="read-more">
+            <img src="{{TimberImage(portfolio.item_image).src}}" style="max-height: auto; max-width: 100%;"/>
+            <a href="#"><span class="collapse-toggle">Read More</span></a>
+          </div>
+
+          {# Description #}
+          <div class="collapse-wrapper">
+            <p>{{portfolio.post_content}}</p>
+            <div class="portfolio-link">
+              <a href="{{portfolio.item_link}}" class="btn btn-contact-me">
+                See Project
+                <span class="fa fa-chevron-right" aria-hidden="true">
+                </span>
+              </a>
+            </div>
+          </div><!-- /.collapse-wrapper -->
+        </li><!-- /.accordion-item -->
+      {% endfor %}
+
+    </ul><!-- /.cool-accordion -->
+  </div><!-- /.container -->
+</main>
+
+{% endblock %}

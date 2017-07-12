@@ -1,0 +1,14 @@
+### WordPress
+*.log
+.htaccess
+
+## Node
+node_modules/
+package-lock.json
+
+### OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+*.zip

@@ -1,0 +1,39 @@
+{% extends "base.twig" %}
+
+
+{% block content %}
+
+{#  Add in Slick Slider Here #}
+<div class="container">
+  <div class="row">
+    <div class="autoplay">
+    {# for portfolio in portfolio #}
+   {% for portfolio_slider in portfolio_slider %}
+      {% for portfolio_item in portfolio_slider %}
+    	  <div class="col-12-xs text-center span-title">
+      		  <img class = "slider-image" src="{{TimberImage(portfolio_item.item_image).src}}" />
+      		  <h2>{{portfolio_item.post_title}}</h2>
+    	  </div>
+      {% endfor %}
+	  {% endfor %}
+	  </div>
+  </div><!--/row-->
+
+
+  <div class="row blog-excerpts">
+    {% for post in blog_feed %}
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="{{TimberImage(post.thumbnail).src}}" alt="...">
+        <div class="caption">
+          <h3>{{post.post_title}}</h3>
+          <p>{{post.post_excerpt}}</p>
+          <p><a href="http://localhost:8888/Portfolio/{{post.slug}}" class="btn btn-primary" role="button">Read Article</a></p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div><!--/row-->
+
+ </div><!--/container-->
+{% endblock %}

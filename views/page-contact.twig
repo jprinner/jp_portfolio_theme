@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<main>
+		<div class="container form-wrapper">
+			<header class="contact-form-header">
+				<h1 class="form-page-title">{{post.title}}</h1>
+				{{post.content}}
+			</header>
+			<div class="row">
+				{% filter shortcodes %}
+					[contact-form-7 id="51" title="Contact form 1"]
+				{% endfilter %}
+			</div> <!-- /row -->
+		</div><!-- /.container form-wrapper -->
+	</main>
+{% endblock %}

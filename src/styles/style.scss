@@ -1,0 +1,555 @@
+
+/* Variables*/
+
+$outer-space: #454545;
+$purple: #785964;
+$background: #F1FFFA;
+
+$work_sans: 'Work Sans', sans-serif;
+$forum: 'Forum', cursive;
+
+/* Global Styles */
+
+body{
+	font-family: $work_sans;
+	background-color: $background;
+	color: $outer-space;
+
+}
+
+/* Header & Footer */
+
+/* Logo */
+
+.logo-1,
+.logo-2{
+  opacity: 0.5;
+}
+
+.logo-1{
+  height: 160px;
+  width: auto;
+}
+
+.logo-2{
+  height: 100px;
+  width: auto;
+}
+
+/* Header */
+
+.header{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-title{
+	font-family: $forum;
+	color: $purple;
+	font-size: 60px;
+}
+
+.navbar-default{
+  border: none;
+  background-color: transparent;
+}
+
+.navbar-nav{
+  li{
+    padding-right: 20px;
+    padding-left: 20px;
+
+    a{
+      display: inline-block;
+    }
+    a:after {
+      content: '';
+      display: block;
+      margin: auto;
+      height: 2px;
+      width: 0px;
+      background: transparent;
+      margin-top: 7px;
+      transition: width .50s ease, background-color .50s ease;
+    }
+    a:hover:after {
+      width: 100%;
+      background: $purple;
+    }
+    a:hover,
+    a:focus{
+      color: $purple !important;
+    }
+  }
+
+  .current-menu-item{
+
+      a{
+      color: $purple !important;
+      }
+
+      a:after{
+        content: '';
+        display: block;
+        height: 2px !important;
+        width: 100% !important;
+        margin-top: 7px !important;
+        background: $purple !important;
+        color: $purple !important;
+      }
+    }
+}
+
+/* Footer */
+
+/* Contact Me Button */
+
+#get-in-touch{
+  font-size: 40px;
+}
+
+.contact-me{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 175px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-contact-me {
+  font-size: 30px;
+  color: rgba(30, 22, 54, 0.6);
+  box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px ;
+  transition: all 0.6s ease 0s
+}
+
+.btn-contact-me:hover {
+  color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(30, 22, 54, 0.7);
+}
+
+.fa .fa-chevron-right{
+  width: 10px;
+  height: auto;
+}
+
+footer{
+	height: 125px;
+	text-align: center;
+}
+
+/* Social Media Menu */
+
+.social-media-menu a{
+	color: $purple;
+	padding:25px;
+	display: inline-block;
+  font-size: 20px;
+  transition: all 0.4s ease 0s
+
+  &:focus,
+  &:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}
+
+/* Home Page */
+
+
+.span-title{
+  position: relative;
+  width: 100%;
+
+  h2 {
+    box-sizing: border-box;
+  	position: absolute;
+  	bottom: 0;
+  	left: 0;
+    color: white;
+    letter-spacing: -1px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    display: inline-block;
+    margin: 0;
+	}
+}
+
+.blog-excerpts{
+  margin-top: 40px;
+}
+
+.thumbnail{
+  border-radius: 10px;
+
+  a{
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    color: rgba(30, 22, 54, 0.6) !important;
+    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset !important;
+    border: none !important;
+    transition: all 0.4s ease 0s;
+
+    &:hover,
+    &:focus{
+      background-color: $purple;
+      color: rgba(255, 255, 255, 0.85) !important;
+      box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
+    }
+  }
+
+}
+
+/* About Page */
+
+.profile-image{
+	border-radius: 50%;
+	max-width: 45%;
+	height: auto;
+	float: left;
+	margin-right: 35px;
+}
+
+.about-me-title{
+	font-size: 40px;
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.about-me-content{
+  font-size: 20px;
+}
+
+/* Skills Profile*/
+
+.skills-title {
+  font-size: 25px;
+  font-weight: 550;
+  letter-spacing: .35px;
+  margin: 0;
+  padding: 0;
+}
+
+.skills-list {
+  list-style-type: none;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.skills {
+  margin-top: 20px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+}
+
+.skills:last-child {
+  border: none;
+}
+
+/* Portfolio */
+
+.accordion-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.main-accordion-content {
+	box-sizing: border-box;
+  padding: 50px 0;
+}
+
+.item-title{
+	margin: 0;
+	margin-bottom: 50px;
+	text-align: center;
+	font-size: 40px;
+}
+
+.portfolio-image{
+  margin-top: 50px;
+  max-width: 100%;
+  height: auto;
+}
+
+.read-more{
+  position: relative;
+
+	span {
+		font-size: 25px;
+		font-weight: 500;
+		position: absolute;
+		bottom: -3rem;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		box-shadow: inset 1px 1px rgba(0, 0, 0, 0.1), inset -1px -1px rgba(0, 0, 0, 0.1);
+
+    &:hover,
+    &:focus {
+      background: rgba(0,0,0,.5);
+      color: rgb(255,255,255);
+
+    }
+	}
+}
+
+.portfolio-accordion {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.accordion-item{
+	box-sizing: border-box;
+	margin-bottom: 100px;
+
+  .collapse-toggle {
+    padding: 15px;
+    margin-top: 0;
+    color: black;
+    background-color: white;
+    opacity: 0.75;
+    text-decoration: none;
+    box-shadow: none !important;
+    bottom: 0;
+    transition: all 0.4s ease 0s;
+
+    &:hover,
+    &:focus{
+      opacity: 1;
+      background: rgba(0,0,0,.5);
+      color: rgb(255,255,255);
+    }
+
+    &:after{
+      font-size: 13px;
+      color: #777;
+      float: right;
+      margin-left: 5px;
+    }
+  }
+
+  .collapse-wrapper {
+    padding: 15px;
+    margin-top: 10px;
+
+    p {
+      font-size: 20px;
+      margin: 0;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+}
+
+
+.portfolio-link{
+	margin-top: 20px;
+	text-align: center;
+}
+
+/* Contact */
+
+.form-wrapper {
+  max-width: 700px;
+
+  .contact-form-header{
+    margin-bottom: 50px;
+  }
+
+  .form-page-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .message-field {
+    padding-top: 15px;
+  }
+
+  .form-footer {
+    clear: both;
+    padding-top: 15px;
+
+    input {
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 700;
+      background-color: $purple;
+      padding: 15px 25px 15px 25px;
+      border: none;
+      border-radius: 5px;
+      width: auto;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.4s ease 0s;
+
+      &:hover,
+      &:focus {
+        background-color: #494949;
+      }
+    }
+  }
+}
+
+.wpcf7-form-control-wrap {
+  display: block;
+
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #E8E9EB;
+    color: $outer-space;
+  }
+
+  input {
+    height: 40px;
+  }
+}
+
+/* Blog */
+
+.blog-content-wrapper{
+  max-width: 850px;
+  background-color: white !important;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 10px;
+  margin-bottom: 40px;
+
+}
+
+.post-title a{
+	color: $outer-space;
+}
+
+/* Blog Sidebar */
+
+
+.blog-sidebar-title{
+	text-align:center;
+	font-size:18px;
+	padding-bottom: 20px;
+	border-bottom: solid 2px #000000;
+  margin-bottom: 25px;
+}
+
+.widget{
+background-color: white !important;
+border-radius: 10px;
+margin-bottom: 40px;
+padding: 20px;
+text-decoration: none;
+
+  ul{
+    padding: 0;
+    text-align: center;
+  }
+
+  li{
+    list-style-type: none;
+  }
+}
+
+input.search-submit{
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  color: rgba(30, 22, 54, 0.6);
+  box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+  transition: all 0.4s ease 0s;
+
+  &:hover,
+  &:focus{
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 0px inset;
+  }
+}
+
+.screen-reader-text{
+  display: none;
+}
+
+.widget ul li a{
+	color:$outer-space;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 670px){
+
+  .site-title{
+    display: none;
+  }
+  .logo-2{
+    display:none;
+  }
+
+}
+
+@media screen and (min-width: 671px){
+
+  .logo-1{
+    display:none;
+  }
+
+}
+
+@media screen and (max-width: 767px){
+
+.header{
+  height: 50px;
+  margin-top: 60px;
+  margin-bottom: 75px;
+}
+
+.navbar{
+
+    width:100%;
+    text-align: center;
+  }
+
+  .navbar-toggle{
+      border: none;
+      transition: all 0.4s ease 0s;
+
+      &:hover
+      &:focus{
+        background-color: $purple !important;
+      }
+  }
+}
+
+@media screen and (max-width: 992px){
+
+  .skills-profile{
+    margin-top: 40px;
+  }
+
+  #primary-sidebar{
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+
+
+
+
